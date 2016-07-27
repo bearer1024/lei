@@ -1,5 +1,5 @@
 <?php
-//include("PDOConnection.php");
+include("PDOConnection.php");
 
 //Define some value
 define("ACTION_ADD_USER", "add");
@@ -8,6 +8,7 @@ define("RESULT_SUCCESS", 0);
 define("RESULT_ERROR", 1);
 define("RESULT_USER_EXISTS", 2);
 
+//$cnn = new PDO("mysql:host=localhost;leicesterCampusDB","root","root");
 
 $action = $_POST["action"];
 $result = RESULT_ERROR;

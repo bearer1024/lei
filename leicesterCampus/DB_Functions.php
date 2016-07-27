@@ -14,7 +14,7 @@ class DB_Functions {
 
     // destructor
     function __destruct() {
-        
+
     }
 
     /**
@@ -42,7 +42,7 @@ class DB_Functions {
      */
     public function getUserByEmailAndPassword($email, $password) {
         $result = mysqli_query($this->db->con,"SELECT * FROM users WHERE user_email = '$email'") or die(mysqli_connect_errno());
-        // check for result 
+        // check for result
         $no_of_rows = mysqli_num_rows($result);
         if ($no_of_rows > 0) {
             $result = mysqli_fetch_array($result);
