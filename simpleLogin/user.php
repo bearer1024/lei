@@ -1,5 +1,5 @@
 <?php
-include("PDOConnection.php");
+//include("PDOConnection.php");
 
 //Define some value
 define("ACTION_ADD_USER", "add");
@@ -16,7 +16,7 @@ if(isset($action))
 {
 	$username = $_POST["username"];
 	$pwd = $_POST["password"];
-	
+
 	if(ACTION_ADD_USER == $action)
 	{
 		//Check exists user
