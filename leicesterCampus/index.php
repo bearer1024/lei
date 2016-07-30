@@ -32,6 +32,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             // user found
             $response["error"] = FALSE;
             $response["user_id"] = $user["user_id"];
+            $response["username"] = $user["user_name"];
             $response["user"]["name"] = $user["user_name"];
             $response["user"]["email"] = $user["user_email"];
             echo json_encode($response);
@@ -71,7 +72,24 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
                 echo json_encode($response);
             }
         }
-    } else {
+    }elseif($tag == 'createNews') {
+        // Request type is create news
+        $title = $_POST['newsTitle'];
+        $content = $_POST['newsContent'];
+        $writer = $_POST['userName'];
+        $createNewsFinish = $db->createNews($title,$content,$writer);
+        if($createNewsFinish) {
+            //created news successfully
+            $response["error"] = FALSE;
+            echo json_encode($response);
+        }else {
+            //failed to create news
+            $response["error"] = TRUE;
+            $response["error_msg"] = "Error occured in creating news";
+            echo json_encode($response);
+        }
+        }
+    else {
         // user failed to store
         $response["error"] = TRUE;
         $response["error_msg"] = "Unknown 'tag' value. It should be either 'login' or 'register'";

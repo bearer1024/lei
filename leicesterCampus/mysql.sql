@@ -10,3 +10,14 @@ create table users(
     salt varchar(10) not null,
     _tc timestamp
     );
+
+CREATE TABLE news(
+      newsId INT(11) NOT NULL AUTO_INCREMENT,
+      title VARCHAR(100) NOT NULL,
+      writer VARCHAR(50) NOT NULL,
+      pubDate DATETIME,
+      content TEXT NOT NULL,
+      extLink VARCHAR(200),
+      PRIMARY KEY(newsId),
+      FOREIGN KEY(writer) REFERENCES users(user_name)
+)

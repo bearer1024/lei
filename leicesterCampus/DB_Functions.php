@@ -37,6 +37,24 @@ class DB_Functions {
         }
     }
 
+    /*
+     *create news,insert records to news table
+     */
+    public function createNews($title,$content,$writer) {
+        $result = mysqli_query($this->db->con,"insert into news(title,writer,content) values('$title','$content','$writer')")
+            or die(mysqli_error($this->db));
+        //check for result
+        if($result) {
+            //getting the detatils
+            $newsId = mysqli_insert_id($this->db->con);
+            $result = mysqli_query($this->db->con,"select *from news where newsId = $newsId");
+            //return details
+            return mysqli_fetch_array($result);
+        }else {
+            return false;
+        }
+    }
+
     /**
      * Get user by email and password
      */
