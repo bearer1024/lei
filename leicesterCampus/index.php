@@ -77,7 +77,8 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
         $title = $_POST['newsTitle'];
         $content = $_POST['newsContent'];
         $writer = $_POST['userName'];
-        $createNewsFinish = $db->createNews($title,$content,$writer);
+       // $createNewsFinish = $db->createNews($title,$content,$writer);
+        $createNewsFinish = $db->createNews($title,$content);
         if($createNewsFinish) {
             //created news successfully
             $response["error"] = FALSE;
