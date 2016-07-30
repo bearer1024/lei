@@ -76,7 +76,7 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
         // Request type is create news
         $title = $_POST['newsTitle'];
         $content = $_POST['newsContent'];
-        $writer = $_POST['userName'];
+       // $writer = $_POST['userName'];
        // $createNewsFinish = $db->createNews($title,$content,$writer);
         $createNewsFinish = $db->createNews($title,$content);
         if($createNewsFinish) {

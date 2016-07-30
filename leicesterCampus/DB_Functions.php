@@ -43,7 +43,7 @@ class DB_Functions {
     //public function createNews($title,$content,$writer) {
     public function createNews($title,$content) {
         //$result = mysqli_query($this->db->con,"insert into news(title,writer,content) values('$title','$content','$writer')")
-        $result = mysqli_query($this->db->con,"insert into news(title,writer,content) values('$title','$content')")
+        $result = mysqli_query($this->db->con,"insert into news(title,content) values('$title','$content')")
             or die(mysqli_error($this->db));
         //check for result
         if($result) {
