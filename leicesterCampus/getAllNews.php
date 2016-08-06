@@ -14,7 +14,7 @@ $result = array();
 //looping through all the records fetched
 while($row = mysqli_fetch_array($r)){
     //pushing name and id in the bank array created
-    array_push($result,array("newsId" => $row['newsId'],"title" => $row['title']));
+    array_push($result,array("newsId" => $row['newsId'],"title" => $row['title'],"image" => $row['image']));
 }
 
 //displaying the array in json format

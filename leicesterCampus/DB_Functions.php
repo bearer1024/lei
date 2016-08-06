@@ -41,9 +41,9 @@ class DB_Functions {
      *create news,insert records to news table
      */
     //public function createNews($title,$content,$writer) {
-    public function createNews($title,$content) {
+    public function createNews($title,$content,$image) {
         //$result = mysqli_query($this->db->con,"insert into news(title,writer,content) values('$title','$content','$writer')")
-        $result = mysqli_query($this->db->con,"insert into news(title,content) values('$title','$content')")
+        $result = mysqli_query($this->db->con,"insert into news(title,content,image) values('$title','$content','$image')")
             or die(mysqli_error($this->db));
         //check for result
         if($result) {
