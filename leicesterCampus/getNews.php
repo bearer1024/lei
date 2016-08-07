@@ -15,7 +15,7 @@ $r = mysqli_query($con,$sql);
 //putting result to an array
 $result = array();
 $row = mysqli_fetch_array($r);
-array_push($result,array("newsId" =>$row['newsId'],"title"=>$row['title'],"content"=>$row['content']));
+array_push($result,array("newsId" =>$row['newsId'],"title"=>$row['title'],"content"=>$row['content'],"image" => $row['image']));
 
 //displaying in json format
 echo json_encode(array('result'=>$result));
