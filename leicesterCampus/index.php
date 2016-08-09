@@ -32,7 +32,8 @@ if (isset($_POST['tag']) && $_POST['tag'] != '') {
             // user found
             $response["error"] = FALSE;
             $response["user_id"] = $user["user_id"];
-            $response["username"] = $user["user_name"];
+            $response["user_name"] = $user["user_name"];
+            $response["user_email"] = $user["user_email"];
             $response["user"]["name"] = $user["user_name"];
             $response["user"]["email"] = $user["user_email"];
             echo json_encode($response);
