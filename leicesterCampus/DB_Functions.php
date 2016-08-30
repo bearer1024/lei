@@ -50,6 +50,15 @@ class DB_Functions {
         if($result) {
             //getting the detatils
             $newsId = mysqli_insert_id($this->db->con);
+            $imageName = $newsId.".jpg";
+            $imageFilePath = "image/".$imageName;
+            if(file_exists($imageFilePath)){
+                unlink($imageFilePath);
+            }
+            //create a new empty file
+            $myfile = fopen($imageFilePath,"w") or die ("unable to open file");
+            //add data to that file
+            file_put_contents($imageFilePath,base64_decode($image));
             $result = mysqli_query($this->db->con,"select *from news where newsId = $newsId");
             //return details
             return mysqli_fetch_array($result);
